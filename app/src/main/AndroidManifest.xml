@@ -9,6 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Esante">
+        <activity android:name=".listeParcours"></activity>
+        <activity
+            android:name=".EspacePatient"
+            android:label="@string/title_activity_espace_patient"
+            android:theme="@style/Theme.Esante.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

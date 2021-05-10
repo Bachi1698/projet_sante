@@ -55,6 +55,14 @@ public class ConnexionFragment extends DialogFragment {
         {
             statut.setText("Medecin");
         }
+        if(activity.verifRole==2)
+        {
+            statut.setText("INTERVENANT");
+        }
+        if(activity.verifRole==3)
+        {
+            statut.setText("PATIENT");
+        }
         /*btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

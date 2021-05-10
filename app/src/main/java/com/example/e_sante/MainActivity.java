@@ -21,19 +21,30 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-      /*  connexion_medecin = findViewById(R.id.connexionMedecin);
-        inscription_medecin = findViewById(R.id.inscriptionMedecin);
         connexion_intervenant = findViewById(R.id.connexionIntervenant);
-        inscription_intervenant = findViewById(R.id.inscriptionIntervenant);
-        connexion_patient = findViewById(R.id.connexionPatient);
-        inscription_patient = findViewById(R.id.inscriptionPatient);
-
-        connexion_medecin.setOnClickListener(new View.OnClickListener() {
+        connexion_intervenant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 clickDialogue();
+                verifRole = 2;
             }
-        });*/
+        });
+        inscription_intervenant = findViewById(R.id.inscriptionIntervenant);
+        inscription_intervenant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickDialogue1();
+                verifRole = 2;
+            }
+        });
+        inscription_medecin = findViewById(R.id.inscriptionMedecin);
+        inscription_medecin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickDialogue1();
+                verifRole = 1;
+            }
+        });
         connexion_medecin = findViewById(R.id.connexionMedecin);
         connexion_medecin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,12 +53,51 @@ public class MainActivity extends AppCompatActivity {
                 verifRole = 1;
             }
         });
+        connexion_patient = findViewById(R.id.connexionPatient);
+        connexion_patient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickDialogue();
+                verifRole = 3;
+            }
+        });
+        inscription_medecin = findViewById(R.id.inscriptionMedecin);
+        inscription_medecin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickDialogue1();
+                verifRole = 1;
+            }
+        });
+        inscription_patient = findViewById(R.id.inscriptionPatient);
+        inscription_patient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickDialogue1();
+                verifRole = 3;
+            }
+        });
 
     }
     public void clickDialogue() {
         FragmentManager paypal = getSupportFragmentManager();
         ConnexionFragment connexionFragment = ConnexionFragment.newInstance("Titre");
         connexionFragment.show(paypal,"connexion");
+    };
+    public void clickDialogue1() {
+        FragmentManager inscription = getSupportFragmentManager();
+        InscriptionFragment inscriptionFragment = InscriptionFragment.newInstance("Titre");
+        inscriptionFragment.show(inscription,"inscription");
+    };
+    public void clickDialogue2() {
+        FragmentManager connexion = getSupportFragmentManager();
+        ConnexionFragment connexionFragment = ConnexionFragment.newInstance("Titre");
+        connexionFragment.show(connexion,"connexion");
+    };
+    public void clickDialogue3() {
+        FragmentManager inscription = getSupportFragmentManager();
+        InscriptionFragment inscriptionFragment = InscriptionFragment.newInstance("Titre");
+        inscriptionFragment.show(inscription,"inscription");
     };
 
 }
